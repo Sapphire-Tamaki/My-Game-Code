@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     }
     private float horiBound = 5.0f;
     public bool gameOver = false;
+
+    public GameObject gameOverMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true;
             unityChan.GetComponent<Animator>().SetFloat("Speed", 0f);
+            gameOverMenu.SetActive(true);
         }
     }
     public void StartSpeedBonusCount()
